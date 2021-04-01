@@ -1,0 +1,53 @@
+<?xml version="0.0" ?>
+<robot name="urdf_robot">
+    <link name="ball_blue">
+
+        <contact>
+            <rolling_friction value="0.0001"/>
+            <spinning_friction value="0.0001"/>
+        </contact>
+
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+             <mass value="1."/>
+             <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+        </inertial>
+
+        <collision>
+            <geometry>
+                <sphere radius="0.025"/>
+                <!-- <mesh filename="sphere_smooth.obj" scale="0.25 0.25 0.25"/>          -->
+            </geometry>
+            
+            <surface>
+                <bounce>
+                    <restitution_coefficient>0.9</restitution_coefficient>
+                    <threshold>0</threshold>
+                </bounce>
+                <contact>
+                    <ode>
+                        <max_vel>10</max_vel>
+                    </ode>
+                </contact>
+            </surface>
+
+        </collision>
+
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+
+            <geometry>
+                <!-- <sphere radius="0.25"/> -->
+                <mesh filename="sphere_smooth.obj" scale="0.025 0.025 0.025"/>      
+            </geometry>
+
+            <material name="red">
+                <color rgba="0.2 0.2 1 1"/>
+                <specular rgb="1 1 1"/>
+            </material>
+
+        </visual>
+
+    </link>
+</robot>
+

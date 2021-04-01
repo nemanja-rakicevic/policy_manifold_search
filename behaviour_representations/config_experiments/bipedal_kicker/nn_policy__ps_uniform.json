@@ -1,0 +1,75 @@
+{
+    "xdir": null,
+    "xname": null,
+    "seed_model": 400,
+    "seed_data": 400,
+    "seed_task": 100,
+    "load_dataset_path": null,
+    "load_model_path": null,
+    "save_model_path": null,
+    "test_experiment": 1,
+    "dimred_mode": ["original"],
+
+    "experiment":
+        {
+            "type": "nn_policy",        
+            "metric":
+                {
+                    "type": "simple_grid", 
+                    "dim": 10
+                },
+            "controller":
+                {
+                    "type": "nn_policy_ppo",
+                    "architecture": [32, 32]
+                },
+            "environment":
+                {
+                    "id": "bipedal_kicker_augmented"
+                }
+        },
+
+    "training":
+        {
+            "num_loops": 501,
+            "recn_init": 0,
+            "testset_ratio": 0.3,
+
+            "dim_latent": 100,
+
+            "pca_param": null,
+            "ae_param": null,
+            "ae_traj": null
+        },
+
+    "batching":
+        {
+            "batchsize_init": null,
+            "batchsize_normal": 512,
+            "batchmode_init": null,
+            "batchmode_normal": "standard",
+            "fixed_iters": null
+        },
+
+    "exploration":
+        {
+            "scale_type": null,
+            "init_range": [-1, 1],
+            "limit_range": null,
+            "initial": "ps_nn_uniform",
+            "normal": "ps_nn_uniform",
+            "num_samples": 2000,
+            "k_init": 1,
+            "mape": null 
+        },
+
+    "clustering":
+        {
+            "algorithm": "bic",
+            "max_clusters": 100,
+            "strictness": 0,
+            "n_clusters_to_sample": 4,
+            "n_samples_in_cluster": 16
+        }
+
+}

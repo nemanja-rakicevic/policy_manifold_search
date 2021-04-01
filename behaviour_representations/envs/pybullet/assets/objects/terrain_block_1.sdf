@@ -1,0 +1,46 @@
+<sdf version='1.6'>
+
+    <world name='default'>
+
+    <gravity>0 0 -9.8</gravity>
+
+         <model name='test_terrain'>
+            <pose frame=''>0 0 0 0 0 0</pose>
+            <link name='terrain_block_1'>
+                <inertial>
+                    <mass>0</mass>
+                    <inertia>
+                        <ixx>0.166667</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.166667</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.166667</izz>
+                    </inertia>
+                </inertial>
+                <visual name='visual'>
+                    <geometry>
+                        <box>
+                            <size>1. 1. 0.1</size>
+                        </box>
+                    </geometry>
+                    <cast_shadows>1</cast_shadows>
+                    <transparency>0.5</transparency>
+                    <material>
+                        <diffuse>0.7 0.7 0.7 1</diffuse>
+                    </material>
+                </visual>
+                <collision name='collision'>
+                    <geometry>
+                        <box>
+                            <size>1. 1. 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+            </link>
+            <static>1</static>
+        </model>
+
+
+    </world>
+</sdf>
