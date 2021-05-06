@@ -57,8 +57,8 @@ _MAX_CPU = 32
 class Experiment():
 
     def __init__(self, environment, controller, seed_task=100,
-                       # run_distributed=True, 
-                       run_distributed=False, 
+                       run_distributed=True, 
+                       # run_distributed=False, 
                        **kwargs):
         self.run_distributed = run_distributed
         # Load Environment
